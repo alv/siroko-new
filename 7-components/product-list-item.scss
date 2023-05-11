@@ -1,0 +1,33 @@
+.product-list-item {
+    position: relative;
+
+    &__thumbnail {
+        position: relative;
+    }
+
+    &__image {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    &__image--hover {
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    &__name {
+        font-size: 1.6rem;
+        font-weight: bold;
+        color: $color-text-body;
+    }
+
+    &__favorite {
+        background: transparent;
+        border: 0;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+}

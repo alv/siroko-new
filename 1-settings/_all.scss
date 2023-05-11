@@ -1,0 +1,11 @@
+
+// Importaciones de settings
+// ========================================================
+
+// En settings tendremos nuestras variables de SCSS, incluyendo design tokens importados desde Figma
+
+@import 'design-tokens';
+
+@import 'settings';
+
+@import 'variables';

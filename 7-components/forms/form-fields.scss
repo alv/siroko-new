@@ -1,0 +1,138 @@
+// Estilos para campos de formulario
+// ========================================================
+
+// Entendiendo "campos" como el conjunto de label, control de formulario (input, textarea...) y otros añadidos como pueden ser mensajes de éxito/error, información adicional...
+
+.form {
+    &__field {
+        display: flex;
+        flex-direction: column;
+        grid-gap: $space-general-1;
+        position: relative;
+
+        // Colores para mensajes de éxito, error...
+
+        &--success {
+            > small, label, input, textarea, select {
+                color: $color-text-success;
+            }
+
+            input:not([type='range']):not([role='switch']), textarea, select {
+                border-color: $color-border-success;
+            }
+
+            select {
+                background-image: url($select-background-image-success);
+            }
+
+            textarea, select, button {
+                &:focus {
+                    @include form-control-success;
+                }
+            }
+
+            input:not([type='range']):not([role='switch']) {
+                &:focus {
+                    @include form-control-success;
+                }
+            }
+        }
+
+        &--alert {
+            > small, label, input, textarea, select {
+                color: $color-text-alert;
+            }
+
+            input:not([type='range']):not([role='switch']), textarea, select {
+                border-color: $color-border-alert;
+            }
+
+            select {
+                background-image: url($select-background-image-alert);
+            }
+
+            textarea, select, button {
+                &:focus {
+                    @include form-control-alert;
+                }
+            }
+
+            input:not([type='range']):not([role='switch']) {
+                &:focus {
+                    @include form-control-alert;
+                }
+            }
+        }
+
+        &--error {
+            > small, label, input, textarea, select {
+                color: $color-text-error;
+            }
+
+            input:not([type='range']):not([role='switch']), textarea, select {
+                border-color: $color-border-error;
+            }
+
+            select {
+                background-image: url($select-background-image-error);
+            }
+
+            textarea, select, button {
+                &:focus {
+                    @include form-control-error;
+                }
+            }
+
+            input:not([type='range']):not([role='switch']) {
+                &:focus {
+                    @include form-control-error;
+                }
+            }
+        }
+
+        // Campos de formulario en línea (botones, checkboxes...)
+
+        &--inline {
+            flex-direction: row;
+            flex-wrap: wrap;
+
+            label, 
+            input[type='checkbox'],
+            input[type='radio'],
+            small,
+            button {
+                display: inline-flex;
+            }
+
+            input[type='checkbox'],
+            input[type='radio'] {
+                flex-shrink: 0;
+            }
+
+            small {
+                flex: 100%;
+                padding-top: 0;
+            }
+
+            label {
+                font-weight: $font-weight-application-regular-normal;
+                margin-bottom: 0;
+                flex: 1;
+            }
+        }
+
+        &--align-center {
+            justify-content: center;
+        }
+
+        &--align-right {
+            justify-content: flex-end;
+        }
+    }
+
+    &__label-info {
+        &--required {
+            color: $color-text-required;
+        }
+    }
+}

@@ -1,0 +1,63 @@
+
+// Importaciones de design tokens
+// ========================================================
+
+// En design tokens tendremos nuestras variables importadas desde Figma, con "micro decisiones" de diseño de las que podemos disponer en nuestros SCSS
+
+// Global
+
+@import "tokens/global/color-palette";
+
+@import "tokens/global/font-size-base";
+
+@import "tokens/global/modular-scale";
+
+@import "tokens/global/sizing-base";
+
+@import "tokens/global/spacing-base";
+
+@import "tokens/global/fallback-font-stacks";
+
+// Aplicación específica
+
+@import "tokens/border/general-border-radius";
+
+@import "tokens/border/application-specific-border-radius";
+
+@import "tokens/border/general-border-width";
+
+@import "tokens/border/application-specific-border-width";
+
+@import "tokens/grid/breakpoints";
+
+@import "tokens/colors/background-colors";
+
+@import "tokens/colors/border-colors";
+
+@import "tokens/colors/drop-shadows";
+
+@import "tokens/colors/inner-shadows";
+
+@import "tokens/colors/text-colors";
+
+@import "tokens/shadows/drop-shadows";
+
+@import "tokens/shadows/inner-shadows";
+
+@import "tokens/sizing/application-specific-size";
+
+@import "tokens/spacing/general-spacing";
+
+@import "tokens/spacing/application-specific-spacing";
+
+@import "tokens/transitions/transitions";
+
+@import "tokens/typography/font-families";
+
+@import "tokens/typography/font-sizes";
+
+@import "tokens/typography/font-weights";
+
+@import "tokens/typography/line-heights";
+
+// Aplicación en componentes

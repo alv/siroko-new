@@ -1,0 +1,12 @@
+// Importación de SCSS de área de cliente
+// ========================================================
+
+// Crearemos una hoja de estilos que cargará solo en el área de cliente, además de la hoja de estilos común
+
+@import "common-imports-before";
+
+//@import "6-vendors/nombre-de-vendor-necesario-en-esta-pagina-1";
+
+//@import "7-components/componente-necesario-en-esta-página-1";
+
+@import "common-imports-after";

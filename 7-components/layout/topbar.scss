@@ -1,0 +1,19 @@
+.site-topbar {
+    align-items: center;
+    background-color: $color-bg-body-inverse;
+    color: $color-text-body-inverse;
+    display: flex;
+    font-size: 14px; // TODO: añadir variable de fuente
+    height: 38px;
+    justify-content: center;
+    overflow: hidden;
+    width: 100%;
+
+    svg {
+        margin-right: $space-general-half;
+    }
+
+    strong {
+        margin: 0 $space-general-half;
+    }
+}

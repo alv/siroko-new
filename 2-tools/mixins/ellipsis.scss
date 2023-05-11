@@ -1,0 +1,9 @@
+// ELLIPSIS
+//Usage: @include abs-position(100px, 100px, auto, auto);
+//==========================================================================
+
+@mixin text-shorten {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

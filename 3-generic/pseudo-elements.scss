@@ -1,0 +1,19 @@
+
+// Pseudo elementos HTML
+// ========================================================
+
+// Estilos genéricos que afectan a pseudo elementos HTML
+
+:focus {
+    outline: none;
+}
+
+::selection {  // Por algún motivo necesita especificarse por separado de -moz-selection para funcionar
+    background-color: $color-bg-body-inverse; 
+    color: $color-text-body-inverse;
+}
+
+::-moz-selection {
+    background-color: $color-bg-body-inverse;
+    color: $color-text-body-inverse;
+}

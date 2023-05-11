@@ -1,0 +1,20 @@
+// =====================================
+// @include center(both);
+// =====================================
+@mixin center($position) {
+    @if $position=="vertical" {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    @else if $position=="horizontal" {
+        left: 50%;
+        transform: translate(-50%);
+    }
+
+    @else if $position=="both" {
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+}

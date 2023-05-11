@@ -1,0 +1,33 @@
+
+// Iconos
+// ========================================================
+
+// Estilos para iconografía
+
+.icon {
+    vertical-align: middle;
+    
+    &--sm, .btn--sm &, .btn & {
+        height: $size-application-icons-icon-sm;
+        width: $size-application-icons-icon-sm;
+    }
+
+    &--md, .btn--lg & {
+        height: $size-application-icons-icon-md;
+        width: $size-application-icons-icon-md;
+    }
+
+    &--lg {
+        height: $size-application-icons-icon-lg;
+        width: $size-application-icons-icon-lg;
+    }
+
+    /*&--xl,  {
+        height: $size-application-icons-icon-xl;
+        width: $size-application-icons-icon-xl;
+    }*/
+
+    .btn &, button & {
+        margin-right: $space-general-1;
+    }
+}

@@ -1,0 +1,22 @@
+// =====================================
+// @include aspect-ratio(4, 3);
+// =====================================
+@mixin aspect-ratio($width, $height) {
+    position: relative;
+
+    &:before {
+        background-color: transparentize(#373d45, .9);
+        content: "";
+        display: block;
+        padding-top: ($height / $width) * 100%;
+        width: 100%;
+    }
+
+    > img {
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+}

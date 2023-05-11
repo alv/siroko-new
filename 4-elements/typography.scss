@@ -1,0 +1,57 @@
+
+// Tipografía
+// ========================================================
+
+// Estilos generales para elementos relacionados con tipografía, sin clases
+
+html {
+    font-size: 62.5%; // Uso más sencillo de REM -> 1rem = 10px, 1.6rem = 16px
+}
+
+body {
+    @include text-body;
+}
+
+/* Encabezados
+----------------------------------------------------------- */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+legend {
+    @include text-weight-heading;
+}
+
+h1 {
+    @include text-size-heading-h1;
+}
+
+h2 {
+    @include text-size-heading-h2;
+}
+
+h3 {
+    @include text-size-heading-h3;
+}
+
+h4 {
+    @include text-size-heading-h4;
+}
+
+h5, legend {
+    @include text-size-heading-h5;
+}
+
+h6 {
+    @include text-size-heading-h6;
+}
+
+/* Otros
+----------------------------------------------------------- */
+
+small {
+    @include text-size-small;
+}

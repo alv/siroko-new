@@ -1,0 +1,15 @@
+
+// Botones
+// ========================================================
+
+// Estilos generales para elementos relacionados con botones, sin clases
+// Aquí incluimos los estilos que le dan a un button aspecto de botón. 
+// Hay otros estilos para button en forms.scss más específicos a su apariencia/comportamiento en un formulario.
+
+button {
+	@include btn;
+}
+
+button[type='submit'] {
+	@include btn--primary;
+}

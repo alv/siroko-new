@@ -1,0 +1,30 @@
+.blog-posts {
+    margin: 0 1.6rem;
+    position: relative;
+
+    grid-column: span 12;
+    @include for-size(tb-md-up) {
+        margin: 0 4.5rem;
+    }
+    @include for-size(dk-xs-up) {
+        margin: 0 9rem;
+    }
+
+    &__title {
+        font-size: 20px;
+        font-weight: 600;
+        text-align: center;
+    }
+
+    &__subtitle {
+        font-size: 20px;
+        font-weight: 400;
+        text-align: center;
+    }
+
+    &__gotoblog {
+        text-align: center;
+    }
+}
+
+@import "blog-posts-list";

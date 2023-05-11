@@ -1,0 +1,29 @@
+// =====================================
+//@include darkenHoverBackground($primary);
+// =====================================
+
+@mixin darkenHoverBackground($baseColor) {
+    background: $baseColor;
+    transition: .2s background ease-in-out;
+
+    &:hover,
+    &:active {
+        background: darken($baseColor, 5%);
+        cursor: pointer;
+    }
+}
+
+// =====================================
+//@include lightenHoverBackground($primary);
+// =====================================
+
+@mixin lightenHoverBackground($baseColor) {
+    background: $baseColor;
+    transition: .2s background ease-in-out;
+
+    &:hover,
+    &:active {
+        background: lighten($baseColor, 5%);
+        cursor: pointer;
+    }
+}

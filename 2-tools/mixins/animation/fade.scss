@@ -1,0 +1,17 @@
+// =====================================
+//@include fade(hide);
+//@include fade(show);
+// =====================================
+@mixin fade($type) {
+    @if $type=="hide" {
+        opacity: 0;
+        transition: visibility 1s, opacity 1s;
+        visibility: hidden;
+    }
+
+    @else if $type=="show" {
+        opacity: 1;
+        transition: visibility 1s, opacity 1s;
+        visibility: visible;
+    }
+}

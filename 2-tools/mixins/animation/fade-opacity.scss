@@ -1,0 +1,23 @@
+// =====================================
+/// Given two opacity values, animates an element between those opacity values.
+/// @param {Number} $fade-from [0] - The beginning opacity value.
+/// @param {Number} $fade-to [1] - The final opacity value.
+/// @param {List} $animation-properties [1s ease] - The animation properties to apply.
+/// @example scss - Usage
+///     @include fade(.8, .2, 3s linear);
+// =====================================
+
+@mixin fade($fade-from: 0, $fade-to: 1, $animation-properties: 1s ease) {
+    $alias: fade- + str-replace($fade-from + "", ".", "-") + "-"+ str-replace($fade-to + "", ".", "-");
+
+    @include keyframes($alias) {
+        from {
+            @include opacity($fade-from);
+        }
+
+        to {
+            @include opacity($fade-to);
+        }
+    }
+    @include prefix(animation, $alias $animation-properties, "webkit");
+}

@@ -1,0 +1,16 @@
+// CALCULATE REM FROM PIXELS AND VICEVERSA
+//==========================================================================
+
+@function calculateRem($size) {
+    $remSize: $size / 16px;
+  //Default font size on html element is 100%, equivalent to 16px;
+    @return #{$remSize}rem;
+  }
+
+  @function calculatePx($size) {
+    $pxSize: $size * 16;
+  //Default font size on html element is 100%, equivalent to 16px;
+    @return #{$pxSize}px;
+  }
+
+

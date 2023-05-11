@@ -1,0 +1,114 @@
+// =====================================
+// (---) top    -> &::before
+// [---] middle -> &
+// (---) bottom -> &::after
+
+/*
+.menu-button {
+	display: inline-block;
+	padding: .5em;
+	background-color: #fafafa;
+	border: 1px solid #ccc;
+}
+
+.burger-icon {
+	@include burger(25px, 3px, 5px, #444);
+}
+
+.menu-button.is-active .burger-icon {
+	@include burger-to-cross;
+}
+*/
+// =====================================
+@mixin burger($width: 30px, $height: 5px, $gutter: 3px, $color: #000, $border-radius: 0, $transition-duration: .3s) {
+    $burger-height: $height !global;
+    $burger-gutter: $gutter !global;
+
+    margin-top: $height + $gutter;
+    margin-bottom: $height + $gutter;
+    position: relative;
+    user-select: none;
+
+    // 1. Fixes jagged edges in Firefox, see issue #10.
+    &,
+    &::before,
+    &::after {
+        background-color: $color;
+        display: block;
+        height: $height;
+        outline: 1px solid transparent; // 1
+        transition-duration: $transition-duration;
+        transition-property: background-color,
+        transform;
+        width: $width;
+
+        @if $border-radius !=0 {
+            border-radius: $border-radius;
+        }
+    }
+
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+    }
+
+    &::before {
+        top: -($height + $gutter);
+    }
+
+    &::after {
+        top: $height + $gutter;
+    }
+}
+
+
+// Select parts of the burger
+@mixin burger-parts {
+    &,
+    &::before,
+    &::after {
+        @content;
+    }
+}
+
+@mixin burger-top {
+    &::before {
+        @content;
+    }
+}
+
+@mixin burger-middle {
+    & {
+        @content;
+    }
+}
+
+@mixin burger-bottom {
+    &::after {
+        @content;
+    }
+}
+
+
+// Burger animations
+@mixin burger-to-cross($color: auto) {
+    & {
+        background-color: transparent;
+    }
+
+    @if ($color !=auto) {
+        &::before,
+        &::after {
+            background-color: $color;
+        }
+    }
+
+    &::before {
+        transform: translateY($burger-gutter + $burger-height) rotate(45deg);
+    }
+
+    &::after {
+        transform: translateY(-($burger-gutter + $burger-height)) rotate(-45deg);
+    }
+}

@@ -1,0 +1,25 @@
+// =====================================
+//@include setColorHover($primary);
+// =====================================
+@mixin darkenHoverColor($baseColor) {
+    color: $baseColor;
+    transition: .2s color ease-in-out;
+
+    &:hover,
+    &:active {
+        color: darken($baseColor, 5%);
+    }
+}
+
+// =====================================
+//@include setColorHover($primary);
+// =====================================
+@mixin lightenHoverColor($baseColor) {
+    color: $baseColor;
+    transition: .2s color ease-in-out;
+
+    &:hover,
+    &:active {
+        color: darken($baseColor, 5%);
+    }
+}

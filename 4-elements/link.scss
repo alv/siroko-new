@@ -1,0 +1,23 @@
+
+// Enlaces
+// ========================================================
+
+// Estilos generales para elementos relacionados con enlaces, sin clases
+
+a {
+	color: $color-text-link;
+	cursor: pointer;
+	font-weight: $font-weight-application-regular-semibold;
+	text-decoration: underline;
+
+	&[href^='tel'] {
+		appearance: none;
+		color: inherit;
+		cursor: default;
+	}
+
+	&:hover,
+	&[href^='tel'] {
+		text-decoration: none;
+	}
+}

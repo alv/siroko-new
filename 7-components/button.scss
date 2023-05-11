@@ -1,0 +1,78 @@
+
+// Botones
+// ========================================================
+
+// Estilos para botones que requieran clases
+
+.btn {
+    @include btn;
+
+    &--primary {
+        @include btn--primary;
+    }
+
+    &--danger {
+        background-color: $color-bg-error;
+        border-color: $color-border-error;
+        color: $color-text-body-inverse;
+    
+        &:hover {
+            background-color: $color-palette-red-80;
+            border-color: $color-palette-red-80;
+            color: $color-text-body-inverse;
+        }
+    
+        &:focus {
+            border-color: $color-palette-red-80;
+            box-shadow: 0 0 0 $border-width-application-form-control-highlight fade-out($color-palette-red-80, .75); // TODO: Pasar este num de opacidad a token?
+        }
+    }
+    
+    &--ghost {
+        background-color: $color-palette-light-10;
+        border-color: $color-palette-light-100;
+        color: $color-text-body-inverse;
+    
+        &:hover {
+            background-color: $color-palette-light-40;
+            border-color: $color-palette-light-100;
+            color: $color-text-body-inverse;
+        }
+    
+        &:focus {
+            border-color: $color-palette-light-100;
+            box-shadow: 0 0 0 $border-width-application-form-control-highlight fade-out($color-palette-light-100, .75); // TODO: Pasar este num de opacidad a token?
+        }
+    }
+    
+    &--rounded {
+        border-radius: $border-radius-general-full;
+    }
+    
+    &--sm {
+        font-size: initial;
+        padding: $space-general-1 $space-general-2;
+    }
+    
+    &--lg {
+        @include text-size-heading-h4;
+        padding: $space-general-2 $space-general-3;
+    }
+
+    &--frameless {
+        width: unset;
+        
+        &, &:hover, &:focus {
+            background: transparent;
+            border: none;
+            padding: 0;
+        }
+    }
+}
+
+.button-group {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    grid-gap: $space-general-1;
+}

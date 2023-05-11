@@ -1,0 +1,15 @@
+.product-list-scroll {
+    @include grid-scroll((
+        tb-md-up,           // Breakpoint
+        3,                  // Number of columns
+        $space-general-4,   // Space between items
+        8rem                // Space around list
+    ),(
+        tb-md-down,         // Breakpoint
+        2,                  // Number of columns
+        $space-general-2,   // Space between items
+        4rem                // Space around list
+    ));
+}
+
+@import 'product-list-item';

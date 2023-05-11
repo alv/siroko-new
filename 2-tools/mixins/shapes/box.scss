@@ -1,0 +1,8 @@
+// =====================================
+// @include box(50px); // square
+//@include box(100px, 50px); //rectangle
+// =====================================
+@mixin box($width, $height: $width) {
+    height: $height;
+    width: $width;
+}

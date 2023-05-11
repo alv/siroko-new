@@ -1,0 +1,20 @@
+.collection-list {
+    @include grid-scroll((
+        dk-xs-up,           // Breakpoint
+        4,                  // Number of columns
+        $space-general-4,   // Space between items
+        8rem                // Space around list
+    ),(
+        dk-xs-down,         // Breakpoint
+        3,                  // Number of columns
+        $space-general-4,   // Space between items
+        8rem                // Space around list
+    ),(
+        tb-md-down,         // Breakpoint
+        2,                  // Number of columns
+        $space-general-2,   // Space between items
+        4rem                // Space around list
+    ));
+}
+
+@import 'collection-list-item';

@@ -1,0 +1,54 @@
+.collection-list-item {
+    position: relative;
+
+    &__image {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    &__image--hover {
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    &__name {
+        color: white;
+        font-size: 20px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+
+    &__links {
+        display: flex;
+        gap: 10px;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: 0 auto;
+        width: calc(100% - calc(10px * 2));
+        height: 46px;
+    }
+
+    &__link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 1 1 0px;
+        text-align: center;
+        color: white;
+        font-size: 14px;
+        border: 1px solid white;
+        border-radius: 100px;
+        background: rgba(0,0,0,.5);
+        backdrop-filter: blur(2px);
+    }
+}

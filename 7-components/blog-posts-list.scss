@@ -1,0 +1,31 @@
+.blog-posts-list {
+    padding-left: 0;
+
+    @include grid-scroll((
+    dk-xs-up,           // Breakpoint
+    2,                  // Number of columns
+    $space-general-3,   // Space between items
+    0                // Space around list
+    ),(
+    dk-xs-down,         // Breakpoint
+    2,                  // Number of columns
+    $space-general-3,   // Space between items
+    16rem                // Space around list
+    ),(
+    tb-md-down,         // Breakpoint
+    1,                  // Number of columns
+    $space-general-3,   // Space between items
+    18rem                // Space around list
+    ),(
+    tb-sm-down,         // Breakpoint
+    1,                  // Number of columns
+    $space-general-2,   // Space between items
+    11rem                // Space around list
+    ));
+}
+
+.blog-posts-list {
+    padding-left: 0;
+}
+
+@import "blog-posts-list-item";

@@ -1,0 +1,19 @@
+// =====================================
+//@include responsive(background-color, #FFFFFF, #DDDDDD, #BBBBBB);
+// =====================================
+
+@mixin responsive($property, $base, $tablet: false, $desktop: false) {
+    #{$property}: $base;
+
+    @if $tablet {
+        @include for-size(xs-up) {
+            #{$property}: $small;
+        }
+    }
+
+    @if $desktop {
+        @include for-size(md-up) {
+            #{$property}: $medium;
+        }
+    }
+}

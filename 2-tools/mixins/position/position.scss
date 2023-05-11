@@ -1,0 +1,30 @@
+// =====================================
+/// Usage: @include position(absolute, $top: 10px, $left: 10px);
+/// @param {String} $position - Either `relative`, `absolute` or `fixed`
+/// @param {Length} $top [null] - Top offset
+/// @param {Length} $right [null] - Right offset
+/// @param {Length} $bottom [null] - Bottom offset
+/// @param {Length} $left [null] - Left offset
+// =====================================
+@mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
+    bottom: $bottom;
+    left: $left;
+    position: $position;
+    right: $right;
+    top: $top;
+}
+
+
+
+// ABSOLUTE POSITION
+//Usage: @include abs-position(100px, 100px, auto, auto);
+//==========================================================================
+
+@mixin abs-position ($top, $right, $bottom, $left) {
+    bottom: $bottom;
+    left: $left;
+    position: absolute;
+    right: $right;
+    top: $top;
+}
+

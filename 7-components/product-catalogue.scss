@@ -1,0 +1,15 @@
+.product-catalogue {
+    position: relative;
+    grid-column: span 12;
+
+    &__title {
+        margin: 0 8rem;
+        text-align: center
+    }
+
+    &__link {
+        display: inline-block;
+    }
+}
+
+@import 'product-list-scroll';

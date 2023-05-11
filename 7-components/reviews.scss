@@ -1,0 +1,56 @@
+.reviews {
+    position: relative;
+
+    grid-column: span 12;
+
+    &__title {
+        text-align: center;
+    }
+
+    .reviews-list {
+        @include grid-scroll((
+        dk-xs-up,           // Breakpoint
+        4,                  // Number of columns
+        $space-general-4,   // Space between items
+        8rem                // Space around list
+        ),(
+        dk-xs-down,         // Breakpoint
+        3,                  // Number of columns
+        $space-general-4,   // Space between items
+        8rem                // Space around list
+        ),(
+        tb-md-down,         // Breakpoint
+        2,                  // Number of columns
+        $space-general-2,   // Space between items
+        4rem                // Space around list
+        ));
+
+        &-item {
+            &__link {
+                text-decoration: none;
+            }
+
+            &__image {
+                display: block;
+                height: auto;
+                width: 100%;
+            }
+
+            &__name {
+                color: $color-text-body;
+                font-size: 1.6rem;
+                font-weight: bold;
+                text-align: center;
+            }
+
+            &__comment {
+                color: #707070;
+                text-align: center;
+            }
+
+            &__rating {
+                text-align: center;
+            }
+        }
+    }
+}

@@ -1,0 +1,7 @@
+// =====================================
+/// Generates the color white, with, optionally, a set opacity.
+/// border-color: white(0.1);
+// =====================================
+@function white($opacity) {
+    @return rgba(255, 255, 255, $opacity);
+}

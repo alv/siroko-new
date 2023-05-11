@@ -1,0 +1,31 @@
+
+// Breadcrumbs
+// ========================================================
+
+// Estilos para migas de pan, a incluir en todas las páginas excepto home y ayudar al usuario a navegar por la jerarquía de contenidos del site.
+
+.breadcrumbs {
+    overflow-x: auto;
+
+    ul {
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+    li {
+        display: inline-flex;
+        align-items: center;
+        flex-wrap: nowrap;
+        flex-shrink: 0;
+    }
+
+    a {
+        white-space: nowrap;
+    }
+
+    .icon {
+        flex-shrink: 0;
+        margin-left: $space-general-1;
+        margin-right: $space-general-1;
+    }
+}

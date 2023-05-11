@@ -1,0 +1,11 @@
+.collection-catalogue {
+    position: relative;
+
+    grid-column: span 12;
+
+    &__title {
+        text-align: center;
+    }
+}
+
+@import "collection-list";

@@ -1,0 +1,12 @@
+// Importación de SCSS de carrito
+// ========================================================
+
+// Crearemos una hoja de estilos que cargará solo en carrito, además de la hoja de estilos común
+
+@import "common-imports-before";
+
+//@import "6-vendors/nombre-de-vendor-necesario-aqui";
+
+//@import "7-components/componente-necesario-en-esta-pagina-1";
+
+@import "common-imports-after";

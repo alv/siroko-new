@@ -1,0 +1,93 @@
+
+// Cuadrícula
+// ========================================================
+
+// Estilos para distribuir contenido en filas/columnas dentro de una cuadrícula
+
+.container {
+    clear: both;
+    position: relative;
+}
+
+.wrapper {
+    margin: 0 auto;
+    max-width: 1280px;
+    padding: 0 1.25rem;
+    position: relative;
+    width: 100%;
+
+    &-full  {
+        @extend .wrapper;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+@mixin grid($columns: 12, $gap: $space-general-4) {
+    gap: $gap;
+    max-width: 100%;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat($columns, 1fr);
+    --column-count: #{$columns};
+
+    @each $breakpoint, $column in $columns {
+        @include for-size($breakpoint) {
+            --column-count: #{$column};
+        }
+    }
+    grid-template-columns: repeat(var(--column-count), 1fr);
+}
+
+@mixin grid-scroll($setup...) {
+    // Variables
+    @each $option in $setup {
+        $breakpoint: nth($option, 1);
+        $column-count: nth($option, 2);
+        $gap: nth($option, 3);
+        $offset: nth($option, 4);
+
+        @include for-size($breakpoint) {
+            --column-count: #{$column-count};
+            --gap: #{$gap};
+            --offset: #{$offset};
+        }
+    }
+
+    @include for-size(dk-sm-up) {
+        --column-width: calc(100% / var(--column-count) - var(--gap) + calc(var(--gap) / var(--column-count)));
+        --scroll-offset: 0;
+    }
+    @include for-size(dk-sm-down) {
+        --column-width: calc(100% / var(--column-count) - calc(var(--gap) * calc(var(--column-count) - 1) / var(--column-count)));
+        --scroll-offset: var(--offset);
+    }
+
+    // Styles
+    gap: var(--gap);
+    max-width: 100%;
+    position: relative;
+    display: flex;
+    overflow: auto;
+    scroll-snap-type: x mandatory;
+
+    @include for-size(dk-sm-up) {
+        margin-left: var(--offset);
+        margin-right: var(--offset);
+    }
+
+    @include for-size(dk-sm-down) {
+        padding-left: var(--offset);
+        padding-right: var(--offset);
+    }
+
+    > * {
+        flex: 0 0 var(--column-width);
+        scroll-snap-align: start;
+        scroll-margin: var(--scroll-offset);
+    }
+}
+
+.grid {
+    @include grid;
+}

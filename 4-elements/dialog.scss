@@ -1,0 +1,121 @@
+
+// Dialog / modales
+// ========================================================
+
+// Estilos para el elemento dialog y sus elementos internos, que podremos usar para modales.
+
+dialog {
+    border: none;
+    border-radius: $border-radius-general-md; // TODO: Pasar a token de aplicación específica?
+    max-height: calc(100vh - #{$space-general-1 * 2});
+    max-width: calc(100vw - #{$space-general-1 * 2});
+    padding: $space-general-2 ;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+
+    &::backdrop {
+        animation: show-backdrop $transitions-application-component-duration $transitions-application-component-timing-function;
+        background: rgba(0,0,0,0.8); // TODO: Pasar a token a reutilizar en otros backdrops
+        //backdrop-filter: blur(1px); // Animar esto parece ser pesado para el navegador y le cuesta bastante, aún con aceleración de hardware o will-change
+    }
+
+    &.is-closed {
+        &[open] { // Esto es raro pero tiene un cierto sentido por el orden en que se quitan clases y se cierra el dialog
+            animation: hide-modal $transitions-application-component-duration $transitions-application-component-timing-function;
+        }
+
+        &::backdrop {
+            animation: hide-backdrop $transitions-application-component-duration $transitions-application-component-timing-function;
+        }
+    }
+
+    &[open] {
+        animation: show-modal $transitions-application-component-duration $transitions-application-component-timing-function;
+    }
+
+    > header, > footer {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+
+    > header {
+        align-items: center;
+        justify-content: space-between;
+
+        h3, h4, h5, h6 {
+            margin-bottom: 0;
+            margin-top: 0
+        }
+    }
+
+    > header .icon, > button .icon {
+        margin-right: 0;
+    }
+
+    > article {
+
+    }
+
+    > footer {
+        grid-gap: $space-general-1;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+
+        button, form {
+            width: 100%;
+
+            @include for-size(mb-xl-up) {
+                width: unset;
+            }
+        }
+    }
+}
+
+@keyframes show-modal {
+    0% {
+        opacity: 0;
+        transform: translateY(-5%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+@keyframes hide-modal {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    10% {
+        opacity: .9;
+        transform: scale(1.03); // Crece una miaja antes de empezar a reducirse. Es un efecto totalmente innecesario pero me gustó.
+    }
+    100% {
+        opacity: 0;
+        transform: scale(.9);
+    }
+}
+
+@keyframes show-backdrop {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes hide-backdrop {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.has-open-modal { // Bloqueamos scroll en el body si hay un modal abierto
+    overflow-y: hidden;
+}

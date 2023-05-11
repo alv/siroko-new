@@ -1,0 +1,103 @@
+// BREAKPOINTS
+//==========================================================================
+@mixin for-size($range) {
+    /*
+    $breakpoints-mb-sm: 375px;
+    $breakpoints-mb-xl: 480px;
+    $breakpoints-tb-md: 824px;
+    $breakpoints-dk-xs: 1063px;
+    $breakpoints-dk-sm: 1440px;
+    $breakpoints-dk-xl: 1920px;
+    */
+
+    @if $range == mb-sm-down {
+        @media (max-width: #{$breakpoints-mb-sm - 1}) {
+            @content;
+        }
+    }
+    @else if $range == mb-sm-to-mb-xl {
+        @media (min-width: $breakpoints-mb-sm) and (max-width: #{$breakpoints-mb-xl - 1}) {
+            @content;
+        }
+    }
+    @else if $range == mb-xl-to-tb-md {
+        @media (min-width: $breakpoints-mb-xl) and (max-width: #{$breakpoints-tb-md - 1}) {
+            @content;
+        }
+    }
+    @else if $range == tb-md-to-dk-xs {
+        @media (min-width: $breakpoints-tb-md) and (max-width: #{$breakpoints-dk-xs - 1}) {
+            @content;
+        }
+    }
+    @else if $range == dk-xs-to-dk-sm {
+        @media (min-width: $breakpoints-dk-xs) and (max-width: #{$breakpoints-dk-sm - 1}) {
+            @content;
+        }
+    }
+    @else if $range == dk-sm-to-dk-xl {
+        @media (min-width: $breakpoints-dk-sm) and (max-width: #{$breakpoints-dk-xl - 1}) {
+            @content;
+        }
+    }
+    @else if $range == mb-xs-up {
+        @media (min-width: $breakpoints-mb-sm) {
+            @content;
+        }
+    }
+    @else if $range == mb-xl-up {
+        @media (min-width: $breakpoints-mb-xl) {
+            @content;
+        }
+    }
+    @else if $range == tb-md-up {
+        @media (min-width: $breakpoints-tb-md) {
+            @content;
+        }
+    }
+    @else if $range == dk-xs-up {
+        @media (min-width: $breakpoints-dk-xs) {
+            @content;
+        }
+    }
+    @else if $range == dk-sm-up {
+        @media (min-width: $breakpoints-dk-sm) {
+            @content;
+        }
+    }
+    @else if $range == dk-xl-up {
+        @media (min-width: $breakpoints-dk-xl) {
+            @content;
+        }
+    }
+    @else if $range == mb-xs-down {
+        @media (max-width: #{$breakpoints-mb-sm - 1}) {
+            @content;
+        }
+    }
+    @else if $range == mb-xl-down {
+        @media (max-width: #{$breakpoints-mb-xl - 1}) {
+            @content;
+        }
+    }
+    @else if $range == tb-md-down {
+        @media (max-width: #{$breakpoints-tb-md - 1}) {
+            @content;
+        }
+    }
+    @else if $range == dk-xs-down {
+        @media (max-width: #{$breakpoints-dk-xs - 1}) {
+            @content;
+        }
+    }
+    @else if $range == dk-sm-down {
+        @media (max-width: #{$breakpoints-dk-sm - 1}) {
+            @content;
+        }
+    }
+    @else if $range == dk-xl-down {
+        @media (max-width: #{$breakpoints-dk-xl - 1}) {
+            @content;
+        }
+    }
+}

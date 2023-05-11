@@ -1,0 +1,19 @@
+// =====================================
+/// Generates a grow-then-shrink (or shrink-then-grow) animation using transform(scale).
+///     @include scale(0.5, 3s ease infinite alternate);
+// =====================================
+@mixin scale($scale-change: 1.1, $animation-properties: 1s ease-in-out) {
+    $alias: "scale-"+ str-replace($scale-change + "", ".", "-");
+
+    @include keyframes($alias) {
+        0%,
+        100% {
+            @include transform(scale(1));
+        }
+
+        50% {
+            @include transform(scale($scale-change));
+        }
+    }
+    @include prefix(animation, $alias $animation-properties, "webkit");
+}

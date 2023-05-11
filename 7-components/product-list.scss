@@ -1,0 +1,5 @@
+.product-list {
+    @include grid((tb-md-up: 3, tb-md-down: 2), $space-general-4);
+}
+
+@import 'product-list-item';

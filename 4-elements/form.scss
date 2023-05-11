@@ -1,0 +1,316 @@
+
+// Formularios
+// ========================================================
+
+// Estilos generales para elementos relacionados con formularios, sin clases
+
+// TODO: Seguramente debamos separarar lo relativo a formularios en lo básico, necesario en todas las páginas, y lo más avanzando necesario solo en páginas con formularios más amplios
+
+/* Contenedores
+----------------------------------------------------------- */
+
+fieldset {
+    background-color: transparent;
+    border: 0;
+	display: flex;
+	flex-direction: column;
+	grid-gap: $space-general-2;
+    margin: 0;
+	margin-bottom: $space-general-5;
+    padding: 0;
+}
+
+legend {
+	display: flex;
+	float: left; // Hack para que el legend no se quede montado sobre el inicio del fieldset y se coloque como un elemento normal
+    padding: 0;
+}
+
+legend + * {
+	clear: both; // Limpiar el float del hack anterior
+}
+
+/* Etiquetas e información complementaria
+----------------------------------------------------------- */
+
+legend + p {
+	margin: 0;
+}
+
+label {
+	display: inline-block;
+	font-weight: $font-weight-application-regular-semibold;
+	margin-right: $space-general-1;
+}
+
+small {
+	form & {
+		color: $color-text-body-muted;
+		display: flex;
+	}
+
+	label & {
+		display: inline-flex;
+		font-size: inherit;
+	}
+}
+
+/* Campos
+----------------------------------------------------------- */
+
+/* General */
+
+input[type='submit'],
+input[type='radio'],
+input[type='checkbox'],
+input[type='button'],
+input[type='reset'],
+input[type='file'],
+input[type='image'],
+label[for],
+select {
+	cursor: pointer;
+}
+
+input, textarea, select, input[type='file']::-webkit-file-upload-button, datalist {
+	appearance: none;
+	background-color: $color-bg-form-control;
+	border: $border-width-application-form-control solid $color-border-form-control;
+	border-radius: $border-radius-application-form-control;
+	padding: $space-application-form-control-padding;
+	transition: background-color $transitions-application-atom-duration $transitions-application-atom-timing-function,
+				background-position $transitions-application-atom-duration $transitions-application-atom-timing-function,
+	            background-size $transitions-application-atom-duration $transitions-application-atom-timing-function,
+	            border-color $transitions-application-atom-duration $transitions-application-atom-timing-function,
+				box-shadow $transitions-application-atom-duration $transitions-application-atom-timing-function;
+	width: 100%;
+}
+
+input:not([type='range']) {
+	&:focus {
+		@include form-control-focus;
+	}
+}
+
+textarea, select {
+	&:focus {
+		@include form-control-focus;
+	}
+}
+
+input,
+textarea,
+select {
+	display: flex;
+
+	&[disabled],
+	&[readonly] {
+		background-color: $color-bg-form-control-disabled;
+	}
+
+	&[disabled] {
+		cursor: not-allowed;
+	}
+}
+
+/* Inputs de texto y textareas */
+
+textarea {
+	-webkit-overflow-scrolling: touch;
+	resize: vertical;
+}
+
+input[type='date'], input[type='time'] {
+	cursor: text;
+
+	&::-webkit-calendar-picker-indicator {
+		cursor: pointer;
+	}
+}
+
+/* Color */
+
+input[type='color'] {
+	height: $size-application-color-input;
+	padding: $space-general-quarter $space-general-half;
+	width: $size-application-color-input;
+}
+
+/* Checkboxes y radios */
+
+input[type='radio'],
+input[type='checkbox'] {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 0 0;
+	height: $size-application-smaller-control;
+	margin-top: -$size-application-smaller-control / 8; // TODO: Esto es para alinearlos verticalmente. Quizá se pueda calcular de forma más dinámica
+	vertical-align: middle;
+	width: $size-application-smaller-control;
+
+	&:checked {
+		background-color: $color-bg-form-control-highlight;
+		background-size: 75% 75%;
+		border-color: $color-border-form-control-highlight;
+
+		&[disabled] {
+			background-color: $color-bg-form-control-disabled;
+			border-color: $color-border-form-control;
+		}
+	}
+}
+
+input[type='checkbox'] {
+	background-image: url($check-background-image);
+
+	&:checked {
+		background-image: url($check-background-image-checked);
+		background-size: 100% 100%;
+	}
+}
+
+input[type='radio'],
+input[role='switch'] {
+	background-image: url($switch-radio-background-image);
+	border-radius: $size-application-smaller-control / 2;
+
+	&:checked {
+		background-image: url($switch-radio-background-image-checked);
+
+		&[disabled] {
+			background-image: url($switch-radio-background-image);
+		}
+	}
+}
+
+/* Conmutadores (toggles/switches) */
+
+input[role='switch'] {
+	background-position: center left;
+	background-size: contain;
+	width: $size-application-smaller-control * 2;
+
+	&:checked {
+		background-position: center right;
+		background-size: contain;
+	}
+}
+
+/* Rangos */
+
+input[type='range'] {
+	background-color: $color-bg-form-control-range-track;
+	border: none;
+	border-radius: $size-application-smaller-control / 2;
+	height: $size-application-smaller-control / 2;
+	padding: 0;
+
+	&::-webkit-slider-thumb { // TODO: Lo incluyo por ahora solo en Webkit ya que hay que declararlos por separado para FF y Edge y se hacía muchísimo CSS
+		@include input-range-thumb;
+		transition: box-shadow $transitions-application-atom-duration $transitions-application-atom-timing-function,
+	                border-color $transitions-application-atom-duration $transitions-application-atom-timing-function;
+	}
+
+	&:focus::-webkit-slider-thumb {
+		@include form-control-focus;
+	}
+
+	&::-webkit-slider-runnable-track { // TODO: Lo incluyo por ahora solo en Webkit ya que hay que declararlos por separado para FF y Edge y se hacía muchísimo CSS
+		@include input-range-track;
+	}
+
+	&[disabled]::-webkit-slider-thumb,
+	&[disabled]::-webkit-slider-runnable-track {
+		cursor: not-allowed;
+	}
+
+	&[disabled]::-webkit-slider-thumb { // TODO: Lo incluyo por ahora solo en Webkit ya que hay que declararlos por separado para FF y Edge y se hacía muchísimo CSS
+		@include input-range-thumb-disabled;
+	}
+}
+
+/* Selects y datalists */
+
+select, input[list]:not([type='time']):not([type='date']) {
+	background-image: url($select-background-image);
+	background-position: right $space-general-1 center;
+	background-repeat: no-repeat;
+	background-size: auto 50%;
+}
+
+select:-webkit-autofill {
+	background-image: inherit;
+}
+
+input[list]:not([type='time']):not([type='date'])::-webkit-calendar-picker-indicator {
+	display: none !important; // Necesita el important para funcionar. Oculta la flecha nativa al hover que sale al menos en Chrome
+}
+
+/* Subida de archivos */
+
+input[type='file'] {
+	padding: 0;
+
+	&::-webkit-file-upload-button {
+		border-bottom: none;
+		border-left: none;
+		border-top: none;
+		cursor: pointer;
+		margin-right: $space-general-2;
+		width: auto;
+	}
+
+	&[disabled]::-webkit-file-upload-button {
+		background-color: $color-bg-form-control-disabled;
+		cursor: not-allowed;
+	}
+}
+
+/* Búsqueda */
+
+input[type='search'] {
+	background-image: url($search-background-image);
+	background-position: left $space-application-form-control-padding center; 
+	background-repeat: no-repeat;
+	background-size: auto calc(100% - (#{$space-application-form-control-padding} * 2 ));
+	padding-left: $size-application-icons-icon-lg + $space-application-form-control-padding;
+
+	&::-webkit-search-cancel-button {
+		appearance: none;
+		background-image: url($search-background-image-cancel);
+		background-position: 50% 50%;
+		background-repeat: no-repeat;
+		background-size: contain;
+		color: $color-text-body-muted;
+		cursor: pointer;
+		height: 100%;
+		margin-right: 0;
+		opacity: .5;
+		position: absolute;
+		right: $space-application-form-control-padding;
+		transition: opacity $transitions-application-atom-duration $transitions-application-atom-timing-function;
+		width: $size-application-icons-icon-sm;
+
+		&:hover {
+			opacity: 1;
+		}
+	}
+}
+
+/* Pseudoelementos
+----------------------------------------------------------- */
+
+input::placeholder {
+	color: $color-text-body-muted;
+	opacity: 1;
+}
+
+textarea::placeholder {
+	color: $color-text-body-muted;
+	opacity: 1;
+}
+
+input::-webkit-autofill {
+	-webkit-text-fill-color: inherit;
+	box-shadow: 0 0 0 62.5rem white inset;
+}

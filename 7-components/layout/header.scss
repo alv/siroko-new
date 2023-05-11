@@ -1,0 +1,56 @@
+.header {
+    box-shadow: 0 4px 4px rgba(30, 30, 32, .15);
+    left: 0;
+    min-width: 375px;
+    overflow: visible;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+
+    .site-header {
+        align-items: center;
+        background-color: $color-bg-body;
+        display: flex;
+        flex-direction: row;
+        height: 60px;
+        justify-content: space-between;
+        overflow: visible;
+        padding: 0 1.4rem;
+        width: 100%;
+
+        &__logo {
+            display: block;
+            margin: 0;
+            padding: 0;
+
+            svg {
+                display: block;
+                height: 30px;
+                width: 121px;
+            }
+        }
+
+        &__options {
+            align-items: center;
+            display: flex;
+            flex-direction: row;
+        }
+
+        &__option {
+            height: auto;
+            margin-right: $space-general-3;
+            width: 22px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            &.mobile-menu-trigger {
+                @include for-size(tb-md-up) {
+                    display: none;
+                }
+            }
+        }
+    }
+}

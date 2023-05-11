@@ -1,0 +1,17 @@
+// Estilos para controles de formulario
+// ========================================================
+
+// Estilos para <input>, <select> y demás elementos de formulario que requieran una clase
+
+.form__control {
+    &--plaintext[readonly] { // Para usar en campos readonly que no se pueden cambiar
+        background-color: unset;
+        border: unset;
+    }
+
+    &--lg { // Campos más grandes
+        &:not([type='file']), &[type='file']::-webkit-file-upload-button {
+            padding: $space-application-form-control-padding-lg;
+        }
+    }
+}

@@ -1,0 +1,25 @@
+
+// Listas
+// ========================================================
+
+// Estilos generales para elementos relacionados con listas, sin clases
+
+ul,
+ol {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+dl {
+    margin: 0;
+}
+
+dt {
+    font-weight: $font-weight-application-regular-semibold;
+    margin: 0;
+}
+
+dd {
+    margin: 0;
+}

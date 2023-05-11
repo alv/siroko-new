@@ -1,0 +1,168 @@
+.site-header__menu {
+    @include for-size(tb-md-down) {
+        display: none;
+    }
+
+    .menu__first-level {
+        align-items: center;
+        display: flex;
+        font-size: $font-size-application-smaller;
+        font-weight: 400; // TODO: FIGMA marca 400 pero no hay esa medida en design-tokens
+        height: 100%;
+        justify-content: center;
+        position: relative;
+        width: 100%;
+
+        .menu__item {
+            &:hover > ul {
+                display: flex;
+            }
+
+            .menu-link {
+                background: $color-bg-body;
+                color: $color-text-body;
+                display: inline-block;
+                font-size: $font-size-application-body * .7815; // 20px MB
+                font-weight: 400; // TODO: FIGMA marca 400 pero no hay esa medida en design-tokens
+                padding: 21px;
+                position: relative;
+                text-decoration: none;
+                transition: color .2s;
+                z-index: 1;
+
+                &:hover,
+                &:visited {
+                    font-weight: 600; // TODO: FIGMA marca 400 pero no hay esa medida en design-tokens
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    .menu__second-level,
+    .menu__third-level {
+        .menu__item {
+            margin-bottom: 15px;
+
+            &:hover > ul {
+                display: block;
+            }
+
+            &:nth-child(3) {
+                margin-bottom: 35px;
+            }
+
+            .menu-link {
+                background: $color-bg-body;
+                color: $color-text-body;
+                display: inline-block;
+                padding: 0;
+                text-decoration: none;
+                z-index: 1;
+            }
+        }
+    }
+
+    .menu__second-level {
+        background-color: white;
+        padding: 3rem 8rem;
+
+        &.menu__megamenu {
+            background: $color-bg-body;
+            z-index: 10;
+        }
+
+        .menu__text-header {
+            display: inline-block;
+            font-weight: 600; // TODO: FIGMA marca 600 pero no hay esa medida en design-tokens
+            margin-bottom: 20px;
+        }
+    }
+}
+
+@media all and (min-width: 824px) {
+    .nav {
+        background: $color-bg-body;
+        margin-top: 50px;
+
+        > nav {
+            margin: 0 auto;
+            max-width: 900px;
+        }
+    }
+
+    .menu {
+        [aria-haspopup="true"] {
+            ~ ul {
+                display: none;
+            }
+        }
+    }
+
+    .menu__first-level {
+        position: relative;
+
+        > li {
+            > [aria-haspopup="true"] {
+                &:focus {
+                    ~ ul {
+                        animation: dropdown .2s ease-out;
+                        display: flex;
+                        transform-origin: top;
+                    }
+                }
+
+                ~ ul {
+                    box-shadow: inset 0 4px 4px rgba(0, 0, 0, .25);
+                    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, .25));
+                    flex-direction: row;
+                    justify-content: space-evenly;
+                    position: fixed;
+                    top: 97px;
+
+                    &:hover {
+                        display: flex;
+                    }
+                }
+            }
+
+            &:focus-within {
+                > [aria-haspopup="true"] {
+                    ~ ul {
+                        display: flex;
+                    }
+                }
+            }
+
+            > [aria-haspopup="true"]:focus,
+            &:focus-within > [aria-haspopup="true"],
+            &:hover > a {
+                font-weight: 600; // TODO: FIGMA marca 600 pero no hay esa medida en design-tokens
+            }
+        }
+    }
+
+    .menu__megamenu {
+        left: 0;
+        position: absolute;
+        top: 100%;
+        width: 100%;
+
+        &:hover {
+            display: flex;
+        }
+
+        a {
+            &:hover {
+                background: tint($color-text-body, 85%);
+                color: darken($color-text-body, 5%);
+            }
+        }
+    }
+
+    .menu__megamenu--flat {
+        > * {
+            flex: 1;
+        }
+    }
+}

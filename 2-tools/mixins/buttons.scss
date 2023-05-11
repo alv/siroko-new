@@ -1,0 +1,64 @@
+
+// @mixins de botones
+// ========================================================
+
+// Agrupaciones de estilos para botones que se repetirán en varios selectores
+
+// Ejemplo de uso .btn { @include btn; }
+
+@mixin btn {
+    align-items: center;
+    border: $border-width-application-button solid $color-border-btn-secondary;
+    border-radius: $border-radius-application-button;
+    color: $color-text-link;
+    cursor: pointer;
+    display: flex;
+    font-size: $font-size-application-h6;
+    font-weight: $font-weight-application-regular-semibold;
+    justify-content: center;
+    padding: $space-general-2 $space-general-3;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background-color $transitions-application-atom-duration $transitions-application-atom-timing-function,
+                border-color $transitions-application-atom-duration $transitions-application-atom-timing-function,
+                box-shadow $transitions-application-atom-duration $transitions-application-atom-timing-function,
+                color $transitions-application-atom-duration $transitions-application-atom-timing-function;
+    width: 100%;
+
+    &:hover {
+        border-color: lighten($color-border-btn-secondary, 25%); // TODO: Pasar este num de opacidad a token?
+        color: lighten($color-text-link, 25%); // TODO: Pasar este num de opacidad a token?
+    }
+
+    &[disabled] {
+		background-color: $color-bg-form-control-disabled;
+		cursor: not-allowed;
+	}
+
+    &:focus { // TODO: Esto está duplicado, es exactamente lo mismo que el extend %form-control-focus. Lo pongo aquí duplicado porque si uso el extend, por el orden en que aparece me pisa estilos que no quiero.
+        border-color: $color-border-form-control-highlight;
+	    box-shadow: 0 0 0 $border-width-application-form-control-highlight fade-out($color-border-form-control-highlight, 0.75);
+    }
+
+    @include for-size(mb-xl-up) {
+		width: unset;
+	}
+}
+
+@mixin btn--primary {
+    background-color: $color-bg-primary;
+    border-color: $color-border-btn-primary;
+    color: $color-text-body-inverse;
+
+    &:hover {
+        background-color: $color-bg-body-inverse-lighter;
+        border-color: $color-bg-body-inverse-lighter;
+        color: $color-text-body-inverse;
+    }
+
+    &:focus {
+        border-color: $color-bg-body-inverse-lighter;
+        box-shadow: 0 0 0 $border-width-application-form-control-highlight fade-out($color-bg-body-inverse-lighter, .75); // TODO: Pasar este num de opacidad a token?
+    }
+}

@@ -1,0 +1,61 @@
+
+// Details/summary
+// ========================================================
+
+// Estilos generales para elemento details y summary, usados para listar un resumen de varias opciones y dando la opción de desplegar más info de alguna de ellas. 
+// Los estamos usando como componente de acordeón. Hay opiniones a favor y en contra de ello.
+// https://www.sarasoueidan.com/blog/accordion-markup/#the-native-html-accordion%3A-details-%2B-summary
+
+// Alterntivamente, para los casos donde no es posible usar details y summary, se usarían los elementos div.details y label.summary junto con input.open (radio o checkbox).
+
+details, .details {
+    ::-webkit-details-marker {
+        display: none;
+    }
+    
+    .open {
+        display: none;
+
+        &:not(:checked) {
+            + .summary ~ * {
+                display: none;
+            }
+        }
+
+        &:checked {
+            + .summary ~ * {
+                display: block;
+            }
+        }
+    }
+}
+
+summary, .summary {
+    align-items: center;
+    border-radius: $border-radius-application-button;
+    cursor: pointer;
+    display: flex;
+    font-weight: $font-weight-application-regular-semibold;
+    @include text-size-heading-h6;
+    justify-content: space-between;
+    padding: $space-general-1;
+    transition: background-color $transitions-application-atom-duration $transitions-application-atom-timing-function;
+
+    .icon {
+        transition: transform $transitions-application-atom-duration $transitions-application-atom-timing-function;
+    }
+
+    details[open] &,
+    .open:checked + & {
+        .icon {
+            transform: rotate(-180deg);
+        }
+
+        background-color: $color-bg-body-highlight;
+    }
+
+    details:hover &,
+    .details:hover & {
+        background-color: $color-bg-body-highlight;
+    }
+}

@@ -1,0 +1,29 @@
+
+// Media
+// ========================================================
+
+// Estilos generales para elementos relacionados con multimedia (imágenes, vídeos...), sin clases
+
+figure {
+    margin: 0;
+}
+
+img,
+iframe,
+video,
+audio,
+object,
+svg {
+    margin: 0;
+	max-width: 100%;
+}
+
+img {
+    border: 0;
+	height: auto;
+	vertical-align: middle;
+}
+
+svg:not(:root) {
+	overflow: hidden;
+}

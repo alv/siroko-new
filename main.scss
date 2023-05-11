@@ -1,0 +1,44 @@
+
+
+// Importación de SCSS comunes
+// ========================================================
+
+// Crearemos una hoja de estilos que cargará en todas las páginas. Por ello, ha de contener en lo posible solo estilos comunes a todas las páginas.
+
+@import "common-imports-before";
+
+@import "3-generic/all";
+
+@import "4-elements/all";
+
+@import "5-objects/all";
+
+//@import "6-vendors/nombre-de-vendor-necesario-en-esta-pagina-1";
+
+@import "7-components/button";
+
+@import "7-components/layout/header";
+
+@import "7-components/layout/content";
+
+@import "7-components/layout/footer";
+
+@import "7-components/forms/form-controls";
+
+@import "7-components/forms/form-fields";
+
+@import "7-components/forms/form-groups";
+
+@import "7-components/forms/form-validation";
+
+@import "7-components/layout/topbar";
+
+@import "7-components/layout/navigation";
+
+@import "7-components/newsletter";
+
+@import "7-components/lightbox";
+
+@import "8-utilities/all";
+
+@import "common-imports-after";

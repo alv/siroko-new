@@ -1,0 +1,32 @@
+
+// Documento
+// ========================================================
+
+// Estilos generales para <body> y <html>
+
+html {
+    scroll-behavior: smooth;
+	scroll-snap-type: x mandatory;
+	-webkit-tap-highlight-color: hsla(0, 0%, 70%, 0.5); // TODO: Usar aquí variables cuando las haya, en plan $tap-highlight-color
+}
+
+body {
+	text-decoration-skip-ink: auto;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	text-size-adjust: none;
+	text-rendering: optimizeLegibility;
+}
+
+html,
+body {
+    height: 100%;
+    /*overflow-x: hidden;*/ // TODO: Esto lo metería si lo llegamos a necesitar pero no de primeras. Nos pondría complicado darnos cuenta de si hemos maquetado alguna parte mal en el sentido de overflow horizontal.
+}
+
+// TODO: Todo esto lo metería si lo llegamos a necesitar pero no de primeras
+/*html:not(.has-transitions) *,
+html:not(.has-transitions) *::before,
+html:not(.has-transitions) *::after {
+    transition: none !important;
+}*/

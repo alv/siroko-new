@@ -1,0 +1,54 @@
+.site-footer {
+    &__newsletter {
+        // display: grid;
+        margin-bottom: 45px;
+        overflow: hidden;
+        padding: 1rem 0;
+        //grid-template-columns: 5fr 7fr;
+
+        @include grid((dk-xs-up: 2, dk-xs-down: 1), $space-general-2);
+
+        &-message {
+            p {
+                margin: 0;
+            }
+        }
+
+        &-form {
+            display: flex;
+            flex-direction: row;
+
+            gap: 1rem;
+            @include for-size(tb-md-down) {
+                flex-direction: column;
+            }
+
+            input[type=text],
+            button {
+                height: 48px;
+            }
+
+            &-label {
+                display: flex;
+                flex-direction: column;
+
+                @include for-size(tb-md-down) {
+                    flex-direction: row;
+
+                    gap: $space-general-4;
+                }
+            }
+
+            label {
+                align-items: center;
+                display: flex;
+                flex-direction: row;
+                margin-bottom: $space-general-1;
+
+                input {
+                    margin-right: $space-general-1;
+                }
+            }
+        }
+    }
+}

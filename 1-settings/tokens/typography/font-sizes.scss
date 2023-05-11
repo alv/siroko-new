@@ -1,0 +1,23 @@
+
+// Do not edit directly
+// Generated on Wed, 13 Jul 2022 09:04:15 GMT
+// ========================================================
+
+
+// Estos son tokens con una aplicación específica, de segundo nivel. Están pensados para usarse en los SCSS o para ser referenciados desde tokens de tercer nivel.
+
+$font-size-application-body: $font-size-scale-base;
+$font-size-application-smaller: $font-size-scale-base / $modular-scale-font-size;
+$font-size-application-smallest: $font-size-scale-base / $modular-scale-font-size / $modular-scale-font-size;
+$font-size-application-h6: $font-size-scale-base * $modular-scale-font-size;
+$font-size-application-h5: $font-size-scale-base * $modular-scale-font-size * $modular-scale-font-size;
+$font-size-application-h4: $font-size-scale-base * $modular-scale-font-size * $modular-scale-font-size * $modular-scale-font-size;
+$font-size-application-h3: $font-size-scale-base * $modular-scale-font-size * $modular-scale-font-size * $modular-scale-font-size * $modular-scale-font-size;
+$font-size-application-h2: $font-size-scale-base * $modular-scale-font-size * $modular-scale-font-size * $modular-scale-font-size * $modular-scale-font-size * $modular-scale-font-size;
+$font-size-application-h1: $font-size-scale-base * $modular-scale-font-size * $modular-scale-font-size * $modular-scale-font-size * $modular-scale-font-size * $modular-scale-font-size * $modular-scale-font-size;
+$font-size-application-h6-lg: $font-size-application-h6 * $modular-scale-desktop-font-size;
+$font-size-application-h5-lg: $font-size-application-h5 * $modular-scale-desktop-font-size;
+$font-size-application-h4-lg: $font-size-application-h4 * $modular-scale-desktop-font-size;
+$font-size-application-h3-lg: $font-size-application-h3 * $modular-scale-desktop-font-size;
+$font-size-application-h2-lg: $font-size-application-h2 * $modular-scale-desktop-font-size;
+$font-size-application-h1-lg: $font-size-application-h1 * $modular-scale-desktop-font-size;

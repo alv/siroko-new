@@ -1,0 +1,79 @@
+
+// @mixins de tipografía
+// ========================================================
+
+// Agrupaciones de estilos de tipografía que se repetirán en varios selectores
+
+// Ejemplo de uso .grid-item { @include text-size-small; }
+
+@mixin text-body {
+    font-family: $font-family-application-regular; // TODO: Remplazar por $font-family-application-regular en cuanto se decida la familia tipográfica base
+    font-size: $font-size-application-body;
+    font-weight: $font-weight-application-regular-normal;
+    line-height: $line-height-application-md;
+}
+
+@mixin text-weight-heading {
+    font-weight: $font-weight-application-regular-semibold;
+}
+
+@mixin text-size-small {
+    font-size: $font-size-application-smaller;
+}
+
+@mixin text-size-smallest {
+    font-size: $font-size-application-smallest;
+}
+
+@mixin text-size-heading-h1 {
+    font-size: $font-size-application-h1;
+    line-height: $line-height-application-lg;
+
+    @include for-size(tb-md-up) {
+        font-size: $font-size-application-h1-lg;
+    }
+}
+
+@mixin text-size-heading-h2 {
+    font-size: $font-size-application-h2;
+
+    @include for-size(tb-md-up) {
+        font-size: $font-size-application-h2-lg;
+        line-height: $line-height-application-lg;
+    }
+}
+
+@mixin text-size-heading-h3 {
+    font-size: $font-size-application-h3;
+
+    @include for-size(tb-md-up) {
+        font-size: $font-size-application-h3-lg;
+        line-height: $line-height-application-lg;
+    }
+}
+
+@mixin text-size-heading-h4 {
+    font-size: $font-size-application-h4;
+
+    @include for-size(tb-md-up) {
+        font-size: $font-size-application-h4-lg;
+        line-height: $line-height-application-lg;
+    }
+}
+
+@mixin text-size-heading-h5 {
+    font-size: $font-size-application-h5;
+
+    @include for-size(tb-md-up) {
+        font-size: $font-size-application-h5-lg;
+        line-height: $line-height-application-lg;
+    }
+}
+
+@mixin text-size-heading-h6 {
+    font-size: $font-size-application-h6;
+
+    @include for-size(tb-md-up) {
+        font-size: $font-size-application-h6-lg;
+    }
+}

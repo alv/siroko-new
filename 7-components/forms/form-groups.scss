@@ -1,0 +1,21 @@
+// Estilos para grupos de campos de formulario
+// ========================================================
+
+// Estilos para contenedores de campos de formulario. Principalmente para poder mostrarlos en distintas columnas en anchos grandes
+
+.form {
+    &__group {
+        display: grid;
+        grid-gap: $space-general-2;
+
+        @include for-size(tb-md-up) {
+            &--6 {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            &--4 {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+        }
+    }
+}

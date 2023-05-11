@@ -1,0 +1,183 @@
+
+// Visibilidad
+// ========================================================
+
+// Clases de utilidad para mostrar/ocultar elementos según el ancho de pantalla
+
+.is-hidden,
+[hidden] {
+    display: none !important;
+}
+
+.is-hidden {
+    @include for-size(tb-md-down) {
+        &--mobile {
+            display: none !important;
+        }
+    }
+    @include for-size(tb-md-to-dk-xs) {
+        &--tablet {
+            display: none !important;
+        }
+    }
+    @include for-size(dk-xs-down) {
+        &--touch {
+            display: none !important;
+        }
+    }
+    @include for-size(dk-xs-up) {
+        &--desktop {
+            display: none !important;
+        }
+    }
+}
+
+.is-invisible {
+    visibility: hidden !important;
+
+    @include for-size(tb-md-down) {
+        &--mobile {
+            visibility: hidden !important;
+        }
+    }
+    @include for-size(tb-md-to-dk-xs) {
+        &--tablet {
+            visibility: hidden !important;
+        }
+    }
+    @include for-size(dk-xs-down) {
+        &--touch {
+            visibility: hidden !important;
+        }
+    }
+    @include for-size(dk-xs-up) {
+        &--desktop {
+            visibility: hidden !important;
+        }
+    }
+}
+
+.is-block {
+    display: block !important;
+
+    @include for-size(tb-md-down) {
+        &--mobile {
+            display: block !important;
+        }
+    }
+    @include for-size(tb-md-to-dk-xs) {
+        &--tablet {
+            display: block !important;
+        }
+    }
+    @include for-size(dk-xs-down) {
+        &--touch {
+            display: block !important;
+        }
+    }
+    @include for-size(dk-xs-up) {
+        &--desktop {
+            display: block !important;
+        }
+    }
+}
+
+.is-inline {
+    display: inline !important;
+
+    @include for-size(tb-md-down) {
+        &--mobile {
+            display: inline !important;
+        }
+    }
+    @include for-size(tb-md-to-dk-xs) {
+        &--tablet {
+            display: inline !important;
+        }
+    }
+    @include for-size(dk-xs-down) {
+        &--touch {
+            display: inline !important;
+        }
+    }
+    @include for-size(dk-xs-up) {
+        &--desktop {
+            display: inline !important;
+        }
+    }
+}
+
+.is-inlineblock {
+    display: inline-block !important;
+
+    @include for-size(tb-md-down) {
+        &--mobile {
+            display: inline-block !important;
+        }
+    }
+    @include for-size(tb-md-to-dk-xs) {
+        &--tablet {
+            display: inline-block !important;
+        }
+    }
+    @include for-size(dk-xs-down) {
+        &--touch {
+            display: inline-block !important;
+        }
+    }
+    @include for-size(dk-xs-up) {
+        &--desktop {
+            display: inline-block !important;
+        }
+    }
+}
+
+.is-flex {
+    display: flex !important;
+
+    @include for-size(tb-md-down) {
+        &--mobile {
+            display: flex !important;
+        }
+    }
+    @include for-size(tb-md-to-dk-xs) {
+        &--tablet {
+            display: flex !important;
+        }
+    }
+    @include for-size(dk-xs-down) {
+        &--touch {
+            display: flex !important;
+        }
+    }
+    @include for-size(dk-xs-up) {
+        &--desktop {
+            display: flex !important;
+        }
+    }
+}
+
+.is-inlineflex {
+    display: inline-flex !important;
+
+    @include for-size(tb-md-down) {
+        &--mobile {
+            display: inline-flex !important;
+        }
+    }
+    @include for-size(dk-xs-down) {
+        &--touch {
+            display: inline-flex !important;
+        }
+    }
+    @include for-size(tb-md-to-dk-xs) {
+        &--tablet {
+            display: inline-flex !important;
+        }
+    }
+    @include for-size(dk-xs-up) {
+        &--desktop {
+            display: inline-flex !important;
+        }
+    }
+}

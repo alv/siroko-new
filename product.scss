@@ -1,0 +1,14 @@
+// Importación de SCSS de producto
+// ========================================================
+
+// Crearemos una hoja de estilos que cargará solo en detalle de producto, además de la hoja de estilos común
+
+@import "common-imports-before";
+
+@import "6-vendors/swiper/swiper"; // TODO: Quitar, si vamos a usar css snap
+
+//@import "6-vendors/nombre-de-vendor-necesario-en-esta-pagina-1";
+
+//@import "7-components/componente-necesario-en-esta-página-1";
+
+@import "common-imports-after";

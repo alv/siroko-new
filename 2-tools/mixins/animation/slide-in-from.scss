@@ -1,0 +1,28 @@
+// =====================================
+/// Slide-in-from creates and calls an animation that slides an element on a given axis for a given amount of space. The offset is measured in the distance from the location the element would naturally fall in, were transforms not applied to it.
+/// @param {String} $slide-axis [x] - The axis on which to slide; 'x' or 'y'.
+/// @param {Length} $slide-offset [-100px] - The offset from the natural element position from which to begin the animation.
+/// @param {List} $animation-properties [3s ease-out] - Any animation properties to be included.
+/// @example scss - Usage
+///     @include slide-in-from(y, -200px, 3s ease alternate infinite);
+// =====================================
+
+@mixin slide-in-from($slide-axis: x, $slide-offset: -100px, $animation-properties: 3s ease-out) {
+    $slide-start: if($slide-axis==x, translateX($slide-offset), translateY($slide-offset));
+    $slide-end: if($slide-axis==x, translateX(0), translateY(0));
+
+    @include keyframes(slide-in-#{$slide-axis}-#{$slide-offset}) {
+        0% {
+            @include opacity(0);
+            @include transform($slide-start);
+        }
+
+        75% {
+            @include transform($slide-end);
+        }
+
+        100% {
+            @include opacity(1);
+        }
+    }
+}

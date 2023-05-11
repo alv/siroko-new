@@ -1,0 +1,13 @@
+
+// Do not edit directly
+// Generated on Wed, 13 Jul 2022 09:04:15 GMT
+// ========================================================
+
+
+// Estos son tokens con una aplicación específica, de segundo nivel. Están pensados para usarse en los SCSS o para ser referenciados desde tokens de tercer nivel.
+// Por performance, lo más probable es que sirva con usar el font stack más liviano. Por si acaso, de todas formas, se incluyen font stacks más específicos.
+
+$font-family-fallback-font-stacks-minimal: system-ui, sans-serif;
+$font-family-fallback-font-stacks-monospace: SFMono-Regular, Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
+$font-family-fallback-font-stacks-serif: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+$font-family-fallback-font-stacks-sans-serif: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;

@@ -1,0 +1,16 @@
+// =====================================
+//@include add-gradient(100px);
+// =====================================
+@mixin add-gradient($bottom) {
+    &:after {
+        background: transparent;
+        background: linear-gradient(to bottom, transparent 0%, black 100%);
+        bottom: $bottom;
+        clear: both;
+        content: "";
+        display: table;
+        height: 110px;
+        position: absolute;
+        width: 100%;
+    }
+}

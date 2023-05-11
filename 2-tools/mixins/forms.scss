@@ -1,0 +1,55 @@
+
+// @mixins de formularios
+// ========================================================
+
+// Agrupaciones de estilos para formularios que se repetirán en varios selectores
+
+// Ejemplo de uso .grid-item { @include text-size-small; }
+
+/* Rangos
+----------------------------------------------------------- */
+
+@mixin input-range-thumb {
+	appearance: none;
+	background-color: $color-bg-form-control-highlight;
+	border: none;
+	border-radius: $border-radius-general-full;
+    cursor: grab;
+	height: $size-application-smaller-control;
+	width: $size-application-smaller-control;
+
+	&:active {
+		cursor: grabbing;
+	}
+}
+
+@mixin input-range-track {
+    cursor: pointer;
+}
+
+@mixin input-range-thumb-disabled {
+    background-color: $color-bg-form-control-range-thumb-disabled;
+}
+
+/* Focus
+----------------------------------------------------------- */
+
+@mixin form-control-focus {
+	border-color: $color-border-form-control-highlight;
+	box-shadow: 0 0 0 $border-width-application-form-control-highlight fade-out($color-border-form-control-highlight, 0.75);
+}
+
+@mixin form-control-success {
+	border-color: $color-border-success;
+	box-shadow: 0 0 0 $border-width-application-form-control-highlight fade-out($color-border-success, 0.75);
+}
+
+@mixin form-control-alert {
+	border-color: $color-border-alert;
+	box-shadow: 0 0 0 $border-width-application-form-control-highlight fade-out($color-border-alert, 0.75);
+}
+
+@mixin form-control-error {
+	border-color: $color-border-error;
+	box-shadow: 0 0 0 $border-width-application-form-control-highlight fade-out($color-border-error, 0.75);
+}

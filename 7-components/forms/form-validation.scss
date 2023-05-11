@@ -1,0 +1,35 @@
+// Estilos para validación de formulario
+// ========================================================
+
+// Estilos para texto de validación al inicio o al final del formulario
+
+.form {
+    &__validation {
+        align-items: center;
+        flex-direction: row;
+
+        .icon {
+            color: $color-text-body-muted;
+            flex-shrink: 0;
+            margin-right: $space-general-1;
+        }
+
+        &--success {
+            &, .icon {
+                color: $color-text-success;
+            }
+        }
+
+        &--alert {
+            &, .icon {
+                color: $color-text-alert;
+            }
+        }
+
+        &--error {
+            &, .icon {
+                color: $color-text-error;
+            }
+        }
+    }
+}

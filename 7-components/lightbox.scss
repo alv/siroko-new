@@ -1,0 +1,41 @@
+
+// Lightbox
+// ========================================================
+
+// Estilos para modales de tipo "lightbox" que requieran clase. Un lightbox es un modal que abre o maximiza un archivo multimedia, especialmente para ampliar o reproducir fotos/vídeos
+
+// Este componente hereda estilos del elemento dialog que se utiliza en todo tipo de modal.
+
+.lightbox {
+    align-items: flex-end;
+    background-color: transparent;
+    border-radius: 0;
+    flex-direction: column;
+    grid-gap: $space-general-1;
+    padding: 0;
+
+    &[open] {
+        display: flex;
+    }
+
+    &__close {
+        &, &:hover {
+            color: $color-text-body-inverse;
+        }
+    }
+
+    &__content {
+        background-color: $color-bg-body;
+        border-radius: $border-radius-general-md;
+        overflow: hidden;
+        overflow-y: auto;
+        padding: $space-general-2;
+    }
+
+    &--frameless {
+        .lightbox__content {
+            background-color: transparent;
+            padding: 0;
+        }
+    }
+}

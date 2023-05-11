@@ -1,0 +1,26 @@
+// Importación de SCSS de página de inicio
+// ========================================================
+
+// Crearemos una hoja de estilos que cargará solo en la página de inicio, además de la hoja de estilos común
+
+@import "common-imports-before";
+
+@import "5-objects/grid";
+
+//@import "6-vendors/swiper/swiper";
+
+@import "7-components/billboard";
+
+@import "7-components/pagination";
+
+@import "7-components/product-catalogue";
+
+@import "7-components/collection-catalogue";
+
+@import "7-components/reviews";
+
+@import "7-components/billboard-movies";
+
+@import "7-components/blog-posts";
+
+@import "common-imports-after";

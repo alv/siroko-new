@@ -1,0 +1,30 @@
+// =====================================
+// @include p-el(before, 1.56em, .125em) {
+//    background: #888c91;
+//    top: .25em;
+//  }
+// @include p-el(after, 1.56em, .125em) {
+//   background: #afb3b5;
+//    bottom: 0;
+//  }
+// =====================================
+@mixin pseudoelement($ba, $width, $height, $rel: true) {
+    @if $el=="before"or $el=="after" {
+        @if ($rel==true) {
+            position: relative;
+        }
+
+        &:#{$ba} {
+            content: "";
+            height: $height;
+            position: absolute;
+            width: $width;
+
+            @content;
+        }
+    }
+
+    @else {
+        @warn "`#{$ba}` is not a valid pseudo-element.";
+    }
+}
